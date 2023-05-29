@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "DeepAoI"
 version = "0.0.1"
-description = "Age-of-Information Model for wireless networks"
+description = "Age-of-Information Model for Deep Learning-Aided wireless networks"
 readme = "README.md"
 requires-python = ">=3.8"
     keywords = ["Age-of-Information", "URLLC", "age of inforamation model","Deep Learning", "Deep Learning for wireless networks", "Deep Learning in Physical Layer Communications"]
@@ -49,7 +49,6 @@ markers = [
 line-length = 88
 
 [tool.isort]
-# https://pycqa.github.io/isort/docs/configuration/options.html
 profile = "black"
 src_paths = ["agenet", "tests"]
 line_length = 88
