@@ -22,7 +22,6 @@ def deepencoder (n,k,snr):
  tf.random.set_seed(3)
  M=2**k
  R = k/n
- print ('M:',M,'k:',k,'n:',n)
  N = 800
  label = np.random.randint(M,size=N)
  data = []
@@ -31,10 +30,6 @@ def deepencoder (n,k,snr):
      temp[i] = 1
      data.append(temp)
  data = np.array(data)
- print (data.shape)
- temp_check = [17,23,45,67,89,96,72,250,350]
- for i in temp_check:
-     print(label[i],data[i])
  input_signal = Input(shape=(M,))
  encoded = Dense(M, activation='relu')(input_signal)
  encoded1 = Dense(n, activation='linear')(encoded)
