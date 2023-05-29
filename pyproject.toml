@@ -5,10 +5,10 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "DeepAoI"
 version = "0.0.1"
-description = "Age of Information Model for wireless networks"
+description = "Age-of-Information Model for wireless networks"
 readme = "README.md"
 requires-python = ">=3.8"
-keywords = ["age of inforamation ", "URLLC", "age of inforamation model","Deep Learning"]
+    keywords = ["Age-of-Information", "URLLC", "age of inforamation model","Deep Learning", "Deep Learning for wireless networks", "Deep Learning in Physical Layer Communications"]
 license = {text = "MIT"}
 authors = [ { name = "Chathuranga Basanayaka", email = "chathurangab@sltc.ac.lk" }, 
 ]
