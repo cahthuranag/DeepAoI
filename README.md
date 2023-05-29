@@ -14,6 +14,8 @@ The following libraries are also required:
 - `math`
 - `scipy`
 - `random`
+- `tensorflow`
+- `keras`
 
 ## How to install
 
