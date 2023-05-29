@@ -132,7 +132,7 @@ def plot_av_age_simulation(num_nodes, active_prob, n, k, P_range):
     plt.plot(P_range, av_age_simulations_ls, marker='o')
     plt.xlabel('Block Length (n)')
     plt.ylabel('Average Age of Information')
-    plt.title('Average Age of Information vs Block Length')
+    plt.title('Average Age of Information vs Transmission Power')
     plt.grid(True)
     plt.xscale('log')
     plt.yscale('log')

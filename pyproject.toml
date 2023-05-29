@@ -1,0 +1,79 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "DeepAoI"
+version = "0.0.1"
+description = "Age of Information Model for wireless networks"
+readme = "README.md"
+requires-python = ">=3.8"
+keywords = ["age of inforamation ", "URLLC", "age of inforamation model","Deep Learning"]
+license = {text = "MIT"}
+authors = [ { name = "Chathuranga Basanayaka", email = "chathurangab@sltc.ac.lk" }, 
+]
+dependencies = [ "numpy", "pandas" , "tabulate", "matplotlib", "scipy"] # Not really required
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering" ]
+[project.scripts]
+ageplot = "agenet.plot:plotshow"
+ageprint = "agenet.printage:printage"
+[project.urls]
+"Homepage" = "https://github.com/cahthuranag/DeepAoI"
+#"Bug Tracker" = ""
+"Documentation" = "https://github.com/cahthuranag/DeepAoI/blob/main/README.md"
+
+[project.optional-dependencies]
+dev = [
+    "pdoc",
+ "pytest", "pytest-cov", "pytest-console-scripts", "coverage", "codecov" ,"pre-commit"
+]
+
+[tool.setuptools]
+
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-v --tb=short --strict-markers"
+testpaths = [ "tests" ]
+#xfail_strict = "true"
+markers = [
+    "critical: The most critical tests",
+    "get: Test functions which return some value",
+    "fast: The fast tests" ]
+[tool.black]
+line-length = 88
+
+[tool.isort]
+# https://pycqa.github.io/isort/docs/configuration/options.html
+profile = "black"
+src_paths = ["agenet", "tests"]
+line_length = 88
+skip_gitignore = "True"
+
+[tool.flake8]
+extend-select = ["B9", "C4"]
+max-line-length = 88
+max-doc-length = 88
+ignore = [ "B018", "SIM106", "W503" ]
+doctests = true
+exclude = [
+    ".git",
+    "__pycache__",
+    ".*cache",
+    "build",
+    "dist",
+    "env",
+    "venv",
+    ".eggs",
+    "*.egg",
+    "docs" ]
+# flake8-docstrings
+docstring-convention = "google"  
+
+
+
