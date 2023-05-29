@@ -1,6 +1,5 @@
 # DeepAoI
-A Python 3.8 implementation of the System Model estimates the average AoI (AAoI) in a deep learning-aided wireless communication system with a slotted aloha-based physical layer tuning scheme over the AWGN channels.
-
+A Python 3.8 implementation of the System Model estimates the average AoI (AAoI) in a deep learning-aided multi-hop wireless communication system over the AWGN channels.
 ## Requirements
 
 The implementation requires Python 3.8+ to run.
