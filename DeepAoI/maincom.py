@@ -98,7 +98,7 @@ def plot_av_age_simulation(num_nodes, active_prob, n, k, P_range):
 
 num_nodes = 2
 active_prob = 0.5
-n = 7
+n = 8
 k = 4
 P_range = [0.01, 0.05, 0.1, 0.5, 1, 5, 10]
 
