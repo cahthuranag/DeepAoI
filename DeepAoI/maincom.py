@@ -1,15 +1,4 @@
 
-import random
-
-import numpy as np
-
-import agenet.av_age as av_age
-import agenet.snr as snr
-#from agenet.bler import blercal, blercal_th
-#from agenet.bler import blercal_
-from deepencoder import deepencoder
-
-
 def main(
         num_nodes: int,
         active_prob: float,
@@ -17,6 +6,14 @@ def main(
         k: int,
         P: float,
        ):
+    import random
+    import numpy as np
+
+    from av_age import average_age_of_information_fn 
+    from snr import snr_th 
+    #from agenet.bler import blercal, blercal_th
+    #from agenet.bler import blercal_
+    from deepencoder import deepencoder
     """
     Simulates a communication system and calculates the AAoI.
 
@@ -49,7 +46,7 @@ def main(
     k1 = k  # number of bits in the message for the source nodes
     k2 = k  # number of bits in the message for the relay or access point
     # block error rate for the relay or access point at the destination
-    snr1_th = snr.snr_th(N0, d1, P1)
+    snr1_th = snr_th(N0, d1, P1)
     #snr2_th = snr.snr_th(N0, d2, P2)
     #er1_th = blercal_th(snr1_th, n1, k1)
     #er2_th = blercal_th(snr2_th, n2, k2)
@@ -115,7 +112,7 @@ def main(
 
     # print(sermat, dep)
     system_time = 1 / lambda1  # system time (time which update in the system)
-    av_age_simulation, _, _ = av_age.average_age_of_information_fn(
+    av_age_simulation, _, _ = average_age_of_information_fn(
         v1, t1, system_time)
 
     # print(er1, er2, er1_th, er2_th)
@@ -125,25 +122,27 @@ def main(
    # return av_age_theoretical, av_age_simulation
     return av_age_simulation
 
-
-
 def plot_av_age_simulation(num_nodes, active_prob, n, k, P_range):
     import matplotlib.pyplot as plt
-    av_age_simulations = []
+    av_age_simulations_ls = []
     for P in P_range:
         av_age_sim = main(num_nodes, active_prob, n, k, P)
-        av_age_simulations.append(av_age_sim)
-    
-    plt.plot(P_range, av_age_simulations, marker='o')
+        av_age_simulations_ls.append(av_age_sim)
+
+    plt.plot(P_range, av_age_simulations_ls, marker='o')
     plt.xlabel('Block Length (n)')
     plt.ylabel('Average Age of Information')
     plt.title('Average Age of Information vs Block Length')
     plt.grid(True)
+    plt.xscale('log')
+    plt.yscale('log')
     plt.show()
+
 num_nodes = 2
 active_prob = 0.5
 n = 7
 k = 4
-P_range =[0.01,0.05, 0.1, 0.5, 1, 5, 10, 50]
+P_range = [0.01, 0.05, 0.1, 0.5, 1, 5, 10, 50]
 
 plot_av_age_simulation(num_nodes, active_prob, n, k, P_range)
+
