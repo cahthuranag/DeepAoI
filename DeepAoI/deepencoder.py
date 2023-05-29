@@ -48,7 +48,7 @@ def deepencoder (n,k,snr):
  adam = Adam(lr=0.01)
  autoencoder.compile(optimizer=adam, loss='categorical_crossentropy')
  autoencoder.fit(data, data,
-                 epochs=100,
+                 epochs=200,
                  batch_size=32)
  from keras.models import load_model
  encoder = Model(input_signal, encoded2)
