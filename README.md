@@ -13,7 +13,7 @@ The DeepAoI contains several functions that can be used to study the Age of Info
 
 ## Result
 
-![System model.](https://github.com/cahthuranag/agenet/blob/main/docs/docs/figures/Fig1.png)
+![System model.](https://github.com/cahthuranag/DeepAoI/blob/main/image/Figure_1.png)
 ## Requirements
 
 The implementation requires Python 3.8+ to run.
