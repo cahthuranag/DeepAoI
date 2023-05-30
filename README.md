@@ -1,6 +1,13 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/cahthuranag/Agewire/blob/3000891c482e715b3006264a88dfcf4ed4aedc7c/LICENSE)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+![GitHub Repo stars](https://img.shields.io/github/stars/cahthuranag/DeepAoI?style=social)
+![GitHub last commit](https://img.shields.io/github/last-commit/cahthuranag/DeepAoI)
 # DeepAoI
 A Python 3.8 implementation of the System Model estimates the average AoI (AAoI) in a deep learning-aided multi-hop wireless communication system over the AWGN channels.
 
+
+
+The DeepAoI contains several functions that can be used to study the Age of Information (AoI) in a multi-hop wireless network. These functions include:
 **main: This function takes input parameters such as the number of nodes, active probability, block size, message size, and transmission power. It simulates the communication system by generating arrival and departure timestamps for events, considering factors like noise power, distance, and signal-to-noise ratio (SNR). The function also utilizes external functions from modules av_age, snr, and deepencoder. Finally, it returns the simulated AAoI
 
 
