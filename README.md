@@ -19,6 +19,8 @@ The DeepAoI contains several functions that can be used to study the Age of Info
 This figure illustrates BER vs. SNR for both the deep learning-based encoder and the uncoded BER.
 
 ![BER.](https://github.com/cahthuranag/DeepAoI/blob/main/image/Figure_1.png)
+
+![BER.](https://github.com/cahthuranag/DeepAoI/blob/main/image/Figure_2.png)
 ## Requirements
 
 The implementation requires Python 3.8+ to run.
