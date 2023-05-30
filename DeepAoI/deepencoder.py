@@ -20,9 +20,9 @@ def deepencoder (n,k,snr):
  import tensorflow as tf
  np.random.seed(1)
  tf.random.set_seed(3)
- M=2**k
- R = k/n
- N = 800
+ M=2**k 
+ R = k/n # code rate
+ N = 800 
  label = np.random.randint(M,size=N)
  data = []
  for i in label:
@@ -54,7 +54,6 @@ def deepencoder (n,k,snr):
  N = 50000
  test_label = np.random.randint(M,size=N)
  test_data = []
- 
  for i in test_label:
      temp = np.zeros(M)
      temp[i] = 1
@@ -72,5 +71,16 @@ def deepencoder (n,k,snr):
  no_errors = (pred_output != test_label)
  no_errors =  no_errors.astype(int).sum()
  ber= no_errors / N
- return ber   
-print(deepencoder(7,4,0.015))        
+ return ber  
+
+def ber_bpsk(snr):
+   import numpy as np
+   # Convert SNR from linear to dB
+   snr_db = 10 * np.log10(snr)
+   
+   # Calculate the Bit Error Rate (BER) for uncoded BPSK
+   ber = 0.5 * np.exp(-0.1 * snr_db)
+   
+   return ber     
+
+

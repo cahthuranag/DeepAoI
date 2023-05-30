@@ -1,5 +1,4 @@
-
-def main(
+def uncoded_age(
         num_nodes: int,
         active_prob: float,
         n: int,
@@ -11,7 +10,7 @@ def main(
 
     from av_age import average_age_of_information_fn 
     from snr import snr_th 
-    from deepencoder import deepencoder
+    from deepencoder import ber_bpsk
     """
     Simulates a communication system and calculates the AAoI.
 
@@ -39,7 +38,7 @@ def main(
     # Generating departure timestamps for the node 1
     server_timestamps_1 = np.zeros(num_events)
     departure_timestamps_s = np.zeros(num_events)
-    er_p_1=deepencoder(n,k,snr1_th)
+    er_p_1=ber_bpsk(snr1_th)
    # print(er_p_1)
 
     for i in range(0, num_events):

@@ -47,4 +47,4 @@ def snr_th(N0, d, P):
     alpha = 1 / (10 ** ((log_alpha) / 10))  # path loss in linear scale
     snr_th = (alpha * P) / N0  #
     return snr_th
-print(snr_th(1 * (10**-11), 1000, (0.01)))
+print(snr_th(1 * (10**-11), 1000, (1)))
