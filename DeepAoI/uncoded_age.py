@@ -26,7 +26,7 @@ def uncoded_age(
     """
     lambda1 = 1  # arrival for one transmission period
     # lambda1 = genlambda[j]
-    num_events = 40000  # number of events
+    num_events = 2000  # number of events
     inter_arrival_times = (1 / lambda1) * \
         (np.ones(num_events))  # inter arrival times
     arrival_timestamps = np.cumsum(inter_arrival_times)  # arrival timestamps
@@ -78,3 +78,13 @@ def uncoded_age(
     av_age_simulation, _, _ = average_age_of_information_fn(
         v1, t1, system_time)
     return av_age_simulation
+
+def uncoded_average_av_age(num_nodes, active_prob, n, k, P, num_iterations):
+    total_av_age = 0
+
+    for _ in range(num_iterations):
+        av_age = uncoded_age(num_nodes, active_prob, n, k, P)
+        total_av_age += av_age
+
+    average_av_age = total_av_age / num_iterations
+    return average_av_age
