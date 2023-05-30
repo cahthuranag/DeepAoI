@@ -25,5 +25,5 @@ def plot_av_age_simulation(num_nodes, active_prob, n, k, P_range):
 
 import numpy as np
 
-plot_av_age_simulation(10, 0.5, 8, 4, [np.arange( 0.01, 0.01, 0.1), np.arange(0.1, 0.1, 1), np.arange(1, 5, 1)])
+plot_av_age_simulation(10, 0.5, 8, 4, [np.arange(0.1, 1, 0.1), np.arange(1, 5, 1)])
 

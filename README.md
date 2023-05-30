@@ -7,12 +7,13 @@ A Python 3.8 implementation of the System Model estimates the average AoI (AAoI)
 
 
 The DeepAoI contains several functions that can be used to study the Age of Information (AoI) in a multi-hop wireless network. These functions include:
-**main: This function takes input parameters such as the number of nodes, active probability, block size, message size, and transmission power. It simulates the communication system by generating arrival and departure timestamps for events, considering factors like noise power, distance, and signal-to-noise ratio (SNR). The function also utilizes external functions from modules av_age, snr, and deepencoder. Finally, it returns the simulated AAoI
+- main: This function takes input parameters such as the number of nodes, active probability, block size, message size, and transmission power. It simulates the communication system by generating arrival and departure timestamps for events, considering factors like noise power, distance, and signal-to-noise ratio (SNR). The function also utilizes external functions from modules av_age, snr, and deepencoder. Finally, it returns the simulated AAoI
+-  deepencoder : this  function is a deep learning-based encoder designed for an AWGN channel. It takes the number of bits in a block (n), the number of bits in a message (k), and the SNR as inputs. This function builds and trains a deep neural network model using Keras and TensorFlow. The model consists of an encoder and a decoder, which are trained to minimize the categorical cross-entropy loss. It encodes messages, adds noise based on the SNR, and decodes the noisy signals to compute the Block Error Rate (BER). The function provides a BER value as the output, indicating the accuracy of the encoding and decoding process in the presence of AWGN.
 
 
 ## Result
 
-
+![System model.](https://github.com/cahthuranag/agenet/blob/main/docs/docs/figures/Fig1.png)
 ## Requirements
 
 The implementation requires Python 3.8+ to run.
