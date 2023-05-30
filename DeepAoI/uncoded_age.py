@@ -26,7 +26,7 @@ def uncoded_age(
     """
     lambda1 = 1  # arrival for one transmission period
     # lambda1 = genlambda[j]
-    num_events = 2000  # number of events
+    num_events = 4000  # number of events
     inter_arrival_times = (1 / lambda1) * \
         (np.ones(num_events))  # inter arrival times
     arrival_timestamps = np.cumsum(inter_arrival_times)  # arrival timestamps
