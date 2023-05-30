@@ -1,5 +1,12 @@
 # DeepAoI
 A Python 3.8 implementation of the System Model estimates the average AoI (AAoI) in a deep learning-aided multi-hop wireless communication system over the AWGN channels.
+
+**main: This function takes input parameters such as the number of nodes, active probability, block size, message size, and transmission power. It simulates the communication system by generating arrival and departure timestamps for events, considering factors like noise power, distance, and signal-to-noise ratio (SNR). The function also utilizes external functions from modules av_age, snr, and deepencoder. Finally, it returns the simulated AAoI
+
+
+## Result
+
+
 ## Requirements
 
 The implementation requires Python 3.8+ to run.
