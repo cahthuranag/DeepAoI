@@ -15,12 +15,6 @@ The DeepAoI contains several functions that can be used to study the Age of Info
 
 
 ## Result
-
-This figure illustrates BER vs. SNR for both the deep learning-based encoder and the uncoded BPSK BER.
-
-![BER.](https://github.com/cahthuranag/DeepAoI/blob/main/image/Figure_1.png)
-
-This figure illustrates AAoI vs. Transmission power for both learning-based encoder and the uncoded BPSK 
 ```
 import numpy as np
 snr_range = np.arange(1, 10, 1)  
@@ -28,10 +22,17 @@ compare_ber(8, 4, snr_range)
 
 ```
 
-![AAoI](https://github.com/cahthuranag/DeepAoI/blob/main/image/Figure_2.png)
+This figure illustrates BER vs. SNR for both the deep learning-based encoder and the uncoded BPSK BER.
+
+![BER.](https://github.com/cahthuranag/DeepAoI/blob/main/image/Figure_1.png)
+
+This figure illustrates AAoI vs. Transmission power for both learning-based encoder and the uncoded BPSK 
 ```python
 plot_av_age_simulation(2, 0.5, 8, 4, np.concatenate([np.arange(0.05, 0.1, 0.01),np.arange(0.1, 1, 0.1), np.arange(1, 10, 1)]),10)
 ```
+
+![AAoI](https://github.com/cahthuranag/DeepAoI/blob/main/image/Figure_2.png)
+
 ## Requirements
 
 The implementation requires Python 3.8+ to run.
