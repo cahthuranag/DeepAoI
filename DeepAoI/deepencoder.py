@@ -22,7 +22,7 @@ def deepencoder (n,k,snr):
  tf.random.set_seed(3)
  M=2**k  
  R = k/n # code rate
- N = 800 
+ N = 5000 
  label = np.random.randint(M,size=N)
  data = []
  for i in label:
@@ -43,7 +43,7 @@ def deepencoder (n,k,snr):
  adam = Adam(lr=0.01)
  autoencoder.compile(optimizer=adam, loss='categorical_crossentropy')
  autoencoder.fit(data, data,
-                 epochs=200,
+                 epochs=300,
                  batch_size=32)
  from keras.models import load_model
  encoder = Model(input_signal, encoded2)
@@ -51,7 +51,7 @@ def deepencoder (n,k,snr):
  deco = autoencoder.layers[-2](encoded_input)
  deco = autoencoder.layers[-1](deco)
  decoder = Model(encoded_input, deco)
- N = 50000
+ N = 10000
  test_label = np.random.randint(M,size=N)
  test_data = []
  for i in test_label:
@@ -73,21 +73,26 @@ def deepencoder (n,k,snr):
  ber= no_errors / N
  return ber  
 
-def ber_bpsk(snr):
-   """ 
-   Calculate the Bit Error Rate (BER) for uncoded BPSK.
-   Args:
-       snr (float): SNR in linear scale.
-       Returns:
-       ber (float): Bit Error Rate (BER).
-       """
-   import numpy as np
-   # Convert SNR from linear to dB
-   snr_db = 10 * np.log10(snr)
-   
-   # Calculate the Bit Error Rate (BER) for uncoded BPSK
-   ber = 0.5 * np.exp(-0.1 * snr_db)
-   
-   return ber     
+def ber_bpsk(snr, block_size):
+    """ 
+    Calculate the Block Error Rate (BLER) for uncoded BPSK.
+    Args:
+        snr (float): SNR in linear scale.
+        block_size (int): Block size of the code.
+    Returns:
+        bler (float): Block Error Rate (BLER).
+    """
+    import numpy as np
+    
+    # Convert SNR from linear to dB
+    snr_db = 10 * np.log10(snr)
+    
+    # Calculate the Bit Error Rate (BER) for uncoded BPSK
+    ber = 0.5 * np.exp(-0.1 * snr_db)
+    
+    # Calculate the Block Error Rate (BLER) from BER
+    bler = 1 - (1 - ber) ** block_size
+    
+    return bler
 
 

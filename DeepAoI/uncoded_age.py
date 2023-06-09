@@ -38,7 +38,7 @@ def uncoded_age(
     # Generating departure timestamps for the node 1
     server_timestamps_1 = np.zeros(num_events)
     departure_timestamps_s = np.zeros(num_events)
-    er_p_1=ber_bpsk(snr1_th)
+    er_p_1=ber_bpsk(snr1_th,n)
    # print(er_p_1)
 
     for i in range(0, num_events):
