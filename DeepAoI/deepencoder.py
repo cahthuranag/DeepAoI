@@ -22,7 +22,7 @@ def deepencoder (n,k,snr):
  tf.random.set_seed(3)
  M=2**k  
  R = k/n # code rate
- N = 5000 
+ N = 1000 
  label = np.random.randint(M,size=N)
  data = []
  for i in label:
