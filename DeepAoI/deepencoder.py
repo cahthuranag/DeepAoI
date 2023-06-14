@@ -43,7 +43,7 @@ def deepencoder (n,k,snr):
  adam = Adam(lr=0.01)
  autoencoder.compile(optimizer=adam, loss='categorical_crossentropy')
  autoencoder.fit(data, data,
-                 epochs=300,
+                 epochs=50,
                  batch_size=32)
  from keras.models import load_model
  encoder = Model(input_signal, encoded2)
@@ -92,6 +92,10 @@ def ber_bpsk(snr, block_size):
     
     # Calculate the Block Error Rate (BLER) from BER
     bler = 1 - (1 - ber) ** block_size
+    if bler > 1:
+        bler = 1
+    if bler < 0:
+        bler = 0
     
     return bler
 
